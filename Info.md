@@ -10,9 +10,9 @@ Avoid the meteors and solar lasers by dodging or jumping, they'll appear at rand
 
 ###### Controls:
 
-Right Arrow / D = Move Right.
+Right Arrow = Move Right.
 
-Left Arrow / A = Move Left.
+Left Arrow = Move Left.
 
 Space = Jump.
 

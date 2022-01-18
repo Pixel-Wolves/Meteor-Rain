@@ -135,11 +135,14 @@ class Player{
         }
 
         // Walk
-        if(keyDown(RIGHT_ARROW) || keyDown("D")){
+        if(keyDown(RIGHT_ARROW) && !keyDown(LEFT_ARROW)){
             playerSprite.velocityX += playerSprite.scale * 3;
         }
-        else if(keyDown(LEFT_ARROW) || keyDown("A")){
+        else if(keyDown(LEFT_ARROW) && !keyDown(RIGHT_ARROW)){
             playerSprite.velocityX -= playerSprite.scale * 3;
+        }
+        else if(keyDown(LEFT_ARROW) && keyDown(RIGHT_ARROW)){
+            playerSprite.velocityX = 0;
         }
 
         // Jump
@@ -206,7 +209,12 @@ class Player{
             this.jsPlayed = false;
             this.airDashed = false;
 
-            if(keyIsDown(RIGHT_ARROW) && this.sprite.velocityX < -0.8 || keyIsDown(LEFT_ARROW) && this.sprite.velocityX > 0.8){
+            if(keyIsDown(RIGHT_ARROW) 
+            && this.sprite.velocityX < -0.8 
+            && !keyDown(LEFT_ARROW) 
+            || keyIsDown(LEFT_ARROW) 
+            && this.sprite.velocityX > 0.8 
+            && !keyDown(RIGHT_ARROW)){
                 this.sprite.changeAnimation("Skid");
             }
         }
@@ -230,11 +238,11 @@ class Player{
         }
 
         // Flip
-        if(this.facingRight == true && keyDown(LEFT_ARROW) || keyDown("A") && this.facingRight == true){
+        if(this.facingRight == true && keyDown(LEFT_ARROW) && !keyDown(RIGHT_ARROW)){
             this.facingRight = false;
             this.sprite.mirrorX(this.sprite.mirrorX() * -1);
         }
-        else if (this.facingRight == false && keyDown(RIGHT_ARROW) || keyDown("D") && this.facingRight == false){
+        else if (this.facingRight == false && keyDown(RIGHT_ARROW) && !keyDown(LEFT_ARROW)){
             this.facingRight = true;
             this.sprite.mirrorX(this.sprite.mirrorX() * -1);
         }
