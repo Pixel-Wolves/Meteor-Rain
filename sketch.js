@@ -156,6 +156,9 @@ function draw() {
       player.reset();
       fallSpeed = width/200;
       appearSpeed = 50;
+      harmGroup.destroyEach();
+      shieldGroup.destroyEach();
+      srGroup.destroyEach();
       gameState = "play";
       spaceReleased = false;
       frameCount = 0;

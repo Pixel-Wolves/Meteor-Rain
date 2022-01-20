@@ -11,7 +11,7 @@ class Player{
         this.facingRight = true;
 
         // Friction & Collission
-        this.friction = 0.3;
+        this.friction = 0.05;
         this.isGrounded = false;
         this.groundCheck = createSprite(this.x,this.y+30,10,10);
         this.groundCheck.visible = false;
@@ -140,9 +140,6 @@ class Player{
         }
         else if(keyDown(LEFT_ARROW) && !keyDown(RIGHT_ARROW)){
             playerSprite.velocityX -= playerSprite.scale * 3;
-        }
-        else if(keyDown(LEFT_ARROW) && keyDown(RIGHT_ARROW)){
-            playerSprite.velocityX = 0;
         }
 
         // Jump
