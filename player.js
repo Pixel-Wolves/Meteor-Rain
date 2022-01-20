@@ -26,7 +26,7 @@ class Player{
         this.walk = loadAnimation("sprites/Walk1.png","sprites/Walk2.png","sprites/Walk3.png","sprites/Walk4.png","sprites/Walk5.png","sprites/Walk6.png");
         this.walk.frameDelay = 2;
         this.jump = loadAnimation("sprites/Jump.png");
-        this.fall = loadAnimation("sprites/Fall1.png","sprites/Fall2.png","sprites/Fall3.png","sprites/Fall4.png",);
+        this.fall = loadAnimation("sprites/Fall2.png","sprites/Fall4.png","sprites/Fall6.png","sprites/Fall8.png");
         this.fall.frameDelay = 1;
         this.dash = loadAnimation("sprites/Dash1.png","sprites/Dash3.png","sprites/Dash5.png","sprites/Dash7.png","sprites/Dash2.png","sprites/Dash4.png","sprites/Dash6.png");
         this.dash.frameDelay = 1;
